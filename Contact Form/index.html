@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+</head>
+<body>
+    <main>
+        <form id="contact-form" novalidate>
+          <!--novalidate:Important! It stops the browser’s default ugly validation popups. We will show nice custom errors instead.-->
+            <h1>Contact Us</h1>
+
+            <!-- First and Last Name -->
+            <div class="name-group">
+                <div class="input-group">
+                    <label for="first-name">First Name <span class="asterisk">*</span></label>
+                    <input type="text" id="first-name" name="first-name" required aria-describedby="first-name-error"> <!--aria-describedby="first-name-error" → Links the input to its error message so screen readers read the error automatically.-->
+                    <p id="first-name-error" class="error-message" role="alert"></p> <!--role="alert" =Screen readers announce changes immediately (perfect for errors)-->
+                </div>
+
+                <div class="input-group">
+                    <label for="last-name">Last Name <span class="asterisk">*</span></label>
+                    <input type="text" id="last-name" name="last-name" required aria-describedby="last-name-error">
+                    <p id="last-name-error" class="error-message" role="alert"></p>
+                </div>
+            </div>
+
+            <!-- Email Address -->
+            <div class="input-group">
+                <label for="email">Email Address <span class="asterisk">*</span></label>
+                <input type="email" id="email" name="email" required aria-describedby="email-error">
+                <p id="email-error" class="error-message" role="alert"></p>
+            </div>
+
+            <!-- Query Type for Radio Button-->
+            <fieldset class="query-type">
+                <legend>Query Type <span class="asterisk">*</span></legend>
+                <div class="radio-options">
+                    <div class="radio-option">
+                        <input type="radio" id="general-enquiry" name="query-type" value="general" required aria-describedby="query-error">
+                        <label for="general-enquiry">General Enquiry</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="support-request" name="query-type" value="support" required aria-describedby="query-error">
+                        <label for="support-request">Support Request</label>
+                    </div>
+                </div>
+                <p id="query-error" class="error-message" role="alert"></p>
+            </fieldset>
+
+            <!-- Message -->
+            <div class="input-group">
+                <label for="message">Message <span class="asterisk">*</span></label>
+                <textarea id="message" name="message" rows="5" required aria-describedby="message-error"></textarea>
+                <p id="message-error" class="error-message" role="alert"></p>
+            </div>
+
+            <!-- Consent Checkbox -->
+            <div class="consent-group">
+                <input type="checkbox" id="consent" name="consent" required aria-describedby="consent-error">
+                <label for="consent">I consent to being contacted by the team <span class="asterisk">*</span></label>
+                <p id="consent-error" class="error-message" role="alert"></p>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+    <!-- Success Toast Message -->
+    <div id="success-toast" class="success-toast hidden" role="alert" aria-live="false" tabindex="-1">
+        <div class="toast-content">
+            <span class="icon"><img src="./images/icon-success-check.svg" alt="Checkbox Icon"></span>
+            <div>
+                <h2>Message Sent!</h2>
+                <p>Thanks for completing the form. We'll be in touch soon!</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+   
+    <p>Coded by <a href="#">Ogbu, Emmanuella Kosisochukwu</a>.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+/* ============================================
+   RESET — remove browser default spacing
+   ============================================ */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: hsl(158,36%, 37%);
+    --primary-font:'Montserrat', sans-serif;
+    --secondary-font: 'Fraunces', serif;
+}
+
+/* ============================================
+   BODY — full height, center the card
+   ============================================ */
+body {
+    background-color: hsl(30, 38%, 92%);
+    min-height: 100vh; /* not height — so if content is taller
+       than the screen it can scroll instead of overflow */
+    display: flex; /* So that the card and footer turn into a flex container with the card centered */
+    flex-direction: column; /* column so card and footer stack vertically */
+    align-items: center; /* centers children horizontally */
+    justify-content: center; /* centers children vertically */
+    padding: 2rem 1rem; /* breathing room so card doesn't touch screen edges */
+}
+
+/* ============================================
+   CARD — CSS Grid splits it into two columns
+   ============================================ */
+.product-card {
+    display: grid; /* Used in creating the two column layout, how the text is centered with the image*/
+    grid-template-columns: 1fr; /* one column, mobile first */
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 10px;
+    max-width: 600px; /* max-width so it doesn't stretch too wide on large screens */
+    width: 100%; /* width: 100% so it shrinks on small screens */
+    overflow: hidden; /* To hide the overflow of the image, clipping image to card */
+}
+
+/* ============================================
+   IMAGE COLUMN
+   ============================================ */
+
+.product-image img {
+    width: 100%;
+    height: auto; /* maintain aspect ratio */
+    display: block; /* removes small gap below image */
+}
+
+/* ============================================
+   TEXT COLUMN — Flexbox stacks content vertically
+   ============================================ */
+.product-info {
+    display: flex;
+    flex-direction:column; /* stacks h3, h1, p, prices, button top to bottom */
+    padding: 1.75rem 1.5rem; /* breathing room around the text */
+    gap: 1.25rem; /* space between all text elements */
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+h3 {
+    font-family: var(--primary-font);
+    font-size: 0.85rem;
+    color: hsl(228, 12%, 48%);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+h1 {
+    font-family: var(--secondary-font);
+    font-size: 2.5rem;
+    color: hsl(212, 21%, 14%);
+    font-weight: 700;
+    line-height: 0.9; /* Adjust line height for better spacing around text*/
+}
+
+p {
+    font-family: var(--primary-font);
+    color: hsl(228, 12%, 48%);
+    font-weight: 500;
+    line-height: 1.6rem; /* Adjust line height for better spacing around text */
+}
+
+/* ============================================
+   PRICES
+   ============================================ */
+.price-cart {
+    display: flex; /* Turns it into a contianer and enables the elements to be side by side as its default for flex-direction is row */
+    gap: 1rem;
+}
+
+.current-price {
+    font-family: var(--secondary-font);
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.old-price {
+    font-family: var(--primary-font);
+    font-size: 0.9375rem;
+    color: hsl(228, 12%, 48%);
+    align-content: center;
+    text-decoration: line-through; /* draws a line through the text */
+}
+
+/* ============================================
+   BUTTON
+   ============================================ */
+.cart-btn {
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    gap: 8px; /* flex on the button so the icon and
+           text sit side by side, spaced */
+    background-color: var(--primary-color);
+    color: hsl(0, 0%, 100%);
+    border: none;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 100%;
+    cursor: pointer;  /* changes mouse cursor to a hand pointer */
+    font-family: var(--primary-font);
+    font-size: 0.9375rem;
+    font-weight: 600;
+}
+
+.cart-btn:hover {
+    background-color: hsl(158, 42%, 18%);  /* slightly darker on hover */
+}
+
+.cart-btn img {
+    width: 1rem;
+    height: 1rem;
+    /* explicitly size the cart icon so it
+       doesn't inherit unexpected dimensions */
+}
+
+/* ============================================
+   FOOTER — pinned to bottom, no gap between lines
+   ============================================ */
+footer.attribution { 
+        margin-top: 10px; /* spaced out the footer from the container */
+        padding: 1rem 0; /* breathing room above and below the text */
+        text-align: center; /* center the text */
+}
+
+.attribution p {
+    font-family: var(--primary-font);
+    font-size: 1rem;
+    color: hsl(212, 21%, 14%);
+    font-weight: 500;
+    margin: 0; /* remove default margin from p, a fix from space between lines */
+    line-height: 1.2;
+    /* line-height gives comfortable reading space
+       between the two lines without needing margin between the text */
+}
+
+.attribution a { 
+        color: hsl(228, 45%, 44%);
+        text-decoration: none;
+    }
+
+.attribution a:hover {
+        text-decoration: underline;
+    }
+
+/* ============================================
+   DESKTOP — two-column layout from 768px onwards
+     - image and text stack vertically on smaller screens
+   ============================================ */
+@media (min-width: 768px) {
+    .product-card {
+        grid-template-columns: 1fr 1fr;  /* switches from one column (mobile) to two columns (desktop) */
+}
+
+}

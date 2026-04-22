@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(89, 20, 158);
+    background-image: url('../Git-Work/images/bg-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 95vh;
+    padding: 2rem;
+}
+
+h1{
+    color: #fff;
+    text-align: left;
+   padding-left: 3rem;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.main {
+  display: flex;               /* side-by-side layout */
+  flex-direction: column;
+  align-items: center;         /* vertically align image and text */
+  justify-content:center;    /* center horizontally in the page */
+  gap: 20px;                   /* space between image and text */
+  padding-left: 2rem;               /* optional padding around the section */
+  padding-right: 2rem;
+  padding-top: 5rem;
+  padding-bottom: 0;
+  flex-wrap: wrap;             /* wraps on small screens for responsiveness */
+}
+
+
+.decorative {
+  width: 40%;                /* adjust size as needed */
+  height: 300px;                /* keep aspect ratio */
+  max-width: 500px;
+  margin-bottom: 2rem; ;
+}
+
+.container {
+  max-width: 500px;            /* limits text width */
+  margin-bottom: 0;
+  margin-left: 1.5rem;
+  margin-top: 1rem;
+  padding: 0;
+}
+
+.container h2 {
+    position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.container p {
+  margin-bottom: 1.0rem;
+  color: white;
+  font-size: small;
+  line-height: 1.6;            /* makes paragraph easier to read */
+}
+
+button {
+  padding: 1rem;
+  font-size: 15px;
+  background-color:white;
+  color:hsl(257, 40%, 49%);
+  border-radius: 20px;
+  border: none;
+  box-sizing: 100px;
+  cursor: pointer;
+  padding: 0.8rem 3rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+button:hover {
+  background-color: #45a049;
+  color: white;
+}
+
+footer{
+    padding: 20px 10px;
+    margin: 0;
+}
+
+footer .attribution {
+    font-size: 20px;
+    color:black;
+    text-align: right;
+    font-style: bold;
+    margin-top: 0;
+    float: center;
+}
+
+.attribution a {
+    color:peachpuff;
+    text-decoration: underline;
+}
+
+.attribution a:hover {
+    text-decoration: dotted;
+}
+
+@media screen and (min-width: 768px) {
+
+  body {
+    background-image: url("../images/bg-desktop.svg");
+    background-size: cover;
+    padding: 1rem;
+  }
+
+  .main {
+    flex-direction: row;
+    text-align: left;
+    gap: 1rem;
+  }
+
+  .decorative {
+    max-width: 650px;
+  }
+
+  .container {
+    max-width: 520px;
+  }
+
+  .container h2 {
+    font-size: 1.2rem;
+  }
+
+}
+
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+
+  .main {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .decorative {
+    width: 80%;
+    height: auto;
+  }
+
+  .container {
+    margin-left: 0;
+    text-align: center;
+  }
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+
+  .decorative {
+    width: 350px;
+    height: auto;
+  }
+
+  .container {
+    max-width: 450px;
+  }
+
+}
+
+@media screen and (min-width: 993px) {
+
+  .main {
+    flex-direction: row;
+  }
+
+}
