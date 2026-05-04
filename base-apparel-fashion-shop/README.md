@@ -17,7 +17,7 @@ This is a solution to the [Base Apparel coming soon page challenge on Frontend M
     - [Continued development](#continued-development)
     - [AI Collaboration](#ai-collaboration)
 - [During this project, I used AI tools like Claude to:](#during-this-project-i-used-ai-tools-like-claude-to)
-- [What worked well:](#what-worked-well)
+    - [Challenges Encountered:](#challenges-encountered)
   - [Author](#author)
   - [Acknowledgments](#acknowledgments)
 
@@ -41,7 +41,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://emmanuella-ogbu.github.io/Frontend-Mentor-Challenges/Base%20Apparel%20Fashion%z20Shop/]
 
 ## My process
 
@@ -56,7 +56,7 @@ Users should be able to:
 
 ### What I learned
 
-This project helped me deepen my understanding of both layout and form validation.
+This project helped me deepen my understanding of understanding layout and form validation.
 
 I learned how display: block affects inline elements like images and why it helps with layout control.
 I practiced combining multiple background properties, such as gradients and images, into a single declaration.
@@ -66,9 +66,6 @@ I implemented basic email validation using JavaScript and regular expressions.
 
 To see how you can add code snippets, see below:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
 ```css
 .error-message {
   display: none;
@@ -106,7 +103,7 @@ setTimeout(function() {
 
 ### Continued development
 
-- Improve my form validation logic with better user feedback (e.g., real-time validation)
+- Explore adding subtle animation and transitions to make the interface feel more interactive.
 - Explore accessibility best practices for forms and inputs
 - Write cleaner, more modular JavaScript code
 
@@ -116,21 +113,20 @@ setTimeout(function() {
 
 - Underatand why my image was breaking in the desktop size
 
-# What worked well:
 
-- Quick debugging support
-- Clear explanations of concepts
+### Challenges Encountered:
+- One of the main challenges I encountered was ensuring that error states were both visually clear and accessible, which required careful structuring of the CSS and JavaScript, as the errors were hidden in the CSS design but visible in JavaScript.
 
-- What I’m improving:
+- I also faced challenges with achieving consistent responsiveness across different screen sizes, especially when combining Flexbox and CSS Grid. I resolved this by adopting a mobile-first workflow and testing layouts incrementally.
 
-- Strengthening my problem-solving approach
+- Additionally, aligning background images and gradients correctly across breakpoints required experimentation with CSS background properties, which helped me better understand how layout and positioning work.
 
 ## Author
 
-- GitHub - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- GitHub - [Emmanuella Ogbu](https://github.com/Emmanuella-Ogbu)
+- Frontend Mentor - [@Emmanuella-Ogbu](https://www.frontendmentor.io/profile/Emmanuella-Ogbu)
 
 ## Acknowledgments
 
 - Thanks to the Frontend Mentor community for providing realistic challenges and inspiration. 
-- Also, appreciation to online resources and mentors that helped clarify concepts during this project.
+- Also, appreciation to online resources that helped clarify concepts during this project.
