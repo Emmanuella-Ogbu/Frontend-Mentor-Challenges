@@ -18,6 +18,9 @@ Each challenge is organized into its own folder:
 
 frontend-mentor-challenges/
 │
+|README.md
+|index.html
+|
 ├── project-name-1/
 │   ├── index.html
 │   ├── style.css
@@ -58,6 +61,10 @@ Through these challenges, I am improving my ability to:
 
 ## 📈 Progress
 
+* Project 1- base-apparel-fashion-shop
+* Project 2 - contact-form
+* Project 3 - huddle-landing-page
+* Project 4 - product-preview-card
 * ⏳ Ongoing — continuously adding new challenges
 
 ---

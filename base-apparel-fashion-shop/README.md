@@ -36,12 +36,12 @@ Users should be able to:
 
 ### Screenshot
 
-![Desktop View](./Preview.png)
+![Desktop View](./design/designed.preview.jpg)
 
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [https://emmanuella-ogbu.github.io/Frontend-Mentor-Challenges/Base%20Apparel%20Fashion%z20Shop/]
+- Live Site URL: [https://emmanuella-ogbu.github.io/Frontend-Mentor-Challenges/base-apparel-fashion-shop/]
 
 ## My process
 

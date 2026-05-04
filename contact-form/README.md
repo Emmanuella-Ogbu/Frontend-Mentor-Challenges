@@ -34,12 +34,12 @@ Users should be able to:
 
 ### Screenshot
 
-![Built Contact Form Preview](./images/Contact-Form-Image.png) 
+![Built Contact Form Preview](./design/designed-preview.jpg) 
 
 ### Links
 
 - Solution URL: [(https://www.frontendmentor.io/solutions/contact-form-built-to-include-screen-readers-using-html-css-and-js-eo-CY-feTY)]
-- Live Site URL: (https://emma-401.github.io/Contact-Form/)
+- Live Site URL: (https://emmanuella-ogbu.github.io/Frontend-Mentor-Challenges/contact-form/)
 
 ---
 

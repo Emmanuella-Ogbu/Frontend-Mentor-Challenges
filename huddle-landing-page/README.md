@@ -1,9 +1,9 @@
 # Huddle Landing Page
 
-A responsive landing page for Huddle, built to practice HTML, CSS
+A responsive landing page for Huddle, built with HTML, CSS
 
 ## Live Site
-https://emma-401.github.io/Huddle-Landing-Page/
+https://emmanuella-ogbu.github.io/Frontend-Mentor-Challenges/huddle-landing-page/
 
 ## Screenshot
 ![Huddle Landing Page](images/preview.jpg)
@@ -19,7 +19,9 @@ Huddle-Landing-Page/
 ├── css/
 │   └── style.css
 └── images/
-    └── all images here
+|    └── all images here
+|
+└──README.md
 
 ## How to Run Locally
 1. Clone the repo: `git clone https://github.com/emma-401/Huddle-Landing-Page.git`

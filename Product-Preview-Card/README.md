@@ -31,12 +31,12 @@ Users should be able to:
 
 ### Screenshot
 
-![Preview of designed work](./design/Desired%20Work.png)
+![Preview of designed work](./design/designed-preview.jpg)
 
 ### Links
 
-- Solution URL: [GitHub](https://github.com/emma-401/Product-Preview-Card)
-- Live Site URL: [GitHub Pages] (https://emma-401.github.io/Product-Preview-Card/)
+- Solution URL: [GitHub](https://github.com/emmanuella-ogbu/Frontend-Mentor-Challenges/product-preview-card)
+- Live Site URL: (GitHub Pages) [https://emmanuella-ogbu.github.io/Frontend-Mentor-Challenges/product-preview-card/]
 
 ## My process
 
