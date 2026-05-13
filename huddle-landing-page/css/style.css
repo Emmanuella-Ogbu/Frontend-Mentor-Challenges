@@ -16,7 +16,7 @@ body{
 h1{
     color: #fff;
     text-align: left;
-   padding-left: 3rem;
+   padding-inline-start: 3rem;
    font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 }
@@ -26,7 +26,7 @@ h1{
   flex-direction: column;
   align-items: center;         /* vertically align image and text */
   justify-content:center;    /* center horizontally in the page */
-  gap: 20px;                   /* space between image and text */
+  gap: 1.25rem;                   /* space between image and text */
   padding-left: 2rem;               /* optional padding around the section */
   padding-right: 2rem;
   padding-top: 5rem;
@@ -66,13 +66,12 @@ h1{
 }
 
 button {
-  padding: 1rem;
   font-size: 15px;
   background-color:white;
   color:hsl(257, 40%, 49%);
   border-radius: 20px;
   border: none;
-  box-sizing: 100px;
+  box-sizing: border-box;
   cursor: pointer;
   padding: 0.8rem 3rem;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
@@ -86,15 +85,14 @@ button:hover {
 footer{
     padding: 20px 10px;
     margin: 0;
+    text-align: center;
 }
 
 footer .attribution {
-    font-size: 20px;
+    font-size: 1rem;
     color:black;
-    text-align: right;
     font-style: bold;
     margin-top: 0;
-    float: center;
 }
 
 .attribution a {
@@ -106,7 +104,7 @@ footer .attribution {
     text-decoration: dotted;
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
 
   body {
     background-image: url("../images/bg-desktop.svg");

@@ -5,6 +5,9 @@ A responsive landing page for Huddle, built with HTML, CSS
 ## Live Site
 https://emmanuella-ogbu.github.io/Frontend-Mentor-Challenges/huddle-landing-page/
 
+## Code
+ https://github.com/Emmanuella-Ogbu/Frontend-Mentor-Challenges/tree/main/huddle-landing-page
+
 ## Screenshot
 ![Huddle Landing Page](images/preview.jpg)
 
