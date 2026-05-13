@@ -44,13 +44,13 @@ body {
 main {
   background-color: var(--white);           /* White background for the form card */
   width: 100%;                              /* Take full width of parent on small screens */
-  max-width: 600px;                         /* Limit maximum width on large screens (desktop) */
+  max-width: 37.5rem; /*600px */                          /* Limit maximum width on large screens (desktop) */
   border-radius: 1.5rem;                    /* Rounded corners - modern look */
   padding: 2.5rem;                          /* Internal spacing inside the card */
   box-shadow: var(--shadow);                /* Soft shadow for depth and elevation */
 }
 
-/* ====================== FORM TYPOGRAPHY ====================== */
+/* ====================== FORM TYPOGRAPHY  ====================== */
 h1 {
   font-size: 2rem;
   font-weight: 700;
@@ -112,7 +112,7 @@ textarea:hover {
   flex: 1; /* Expands to fill the row of the form container */
 }
 
-@media (max-width: 640px) {
+@media (min-width: 40rem) /* 640px/16=40rem */ {
   .name-group {
    flex-direction: column;
   }
@@ -132,7 +132,6 @@ textarea:hover {
   margin-bottom: 0.75rem;
   color: var(--grey-900);
   padding: 0;   /* Clean legend */
-  float: none;  /* Prevents weird legend positioning in some browsers */
 }
 
 /* Radio Container */
@@ -152,7 +151,7 @@ textarea:hover {
   align-items: center;
   gap: 0.75rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.2s ease-in-out;
   background-color: var(--white);
   width: 100%; /* Full width */
 }
@@ -189,9 +188,9 @@ textarea:hover {
   font-weight: 400;
 }
 
+.consent-group.error input[type="checkbox"],
 .input-group.error input,
-.input-group.error textarea,
-.consent-group.error input[type="checkbox"] {
+.input-group.error textarea{
   border-color: var(--red);
 }
 
@@ -209,8 +208,8 @@ textarea:hover {
 }
 
 .consent-group input[type="checkbox"] {
-  width: 1.5rem;          /* Bigger size */
   height: 1.2rem;
+  width: 1.5rem;          /* Bigger size */
   margin-top: 3px;
   accent-color: var(--green-600);
   flex-shrink: 0;
@@ -249,7 +248,7 @@ button:focus-visible {
 
 /* ====================== SUCCESS TOAST ====================== */
 .success-toast {
-  position: fixed;
+  position: absolute;
   top: 2.5rem;
   left: 50%;
   transform: translateX(-50%);
@@ -296,7 +295,6 @@ button:focus-visible {
 .attribution {
     margin-top: 2rem;                    /* Good space between form and footer */
     text-align: center;
-    font-size: 0.9rem;
     color: var(--grey-900);      /* Darker color for names*/       
     line-height: 1.6;
     font-size: 1rem;
