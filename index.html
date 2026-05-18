@@ -4,85 +4,207 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="images/favicon-32x32.png">
+
   <title>Emmanuella | Frontend Projects</title>
 
   <style>
-    body {
+
+    * {
+      padding: 0;
       margin: 0;
+      box-sizing: border-box;
+    }
+    body {
       font-family: Arial, sans-serif;
       background: #0f172a;
       color: white;
+      min-height: 100vh;
       text-align: center;
+      padding: 2rem;
     }
 
-    h1 {
-      margin-top: 2rem;
+    .heading {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .heading h1 {
       font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .heading p {
+      color: #cbd5e1;
+      font-size: 1rem;
     }
 
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 2rem;
-      max-width: 1000px;
+      gap: 2rem;
+      max-width: 1200px;
       margin: auto;
     }
 
     .card {
       background: #1e293b;
-      padding: 1.5rem;
-      border-radius: 12px;
-      transition: 0.3s;
+      padding: 2rem;
+      text-align: left;
+      border-radius: 18px;
+      transition:all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-10px);
       background: #334155;
     }
 
-    a {
-      display: inline-block;
-      margin-top: 1rem;
-      text-decoration: none;
-      color: #38bdf8;
-      font-weight: bold;
+    .icon-icon {
+      margin-bottom: 1rem;
     }
+
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .card p {
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .card a {
+      display: inline-block;
+      text-decoration: none;
+      background-color: #38bdf8;
+      color: #0f172a;
+      padding: 0.85rem 1.2rem;
+      font-weight: bold;
+      transition: 0.3s ease;
+      text-align: center;
+    }
+
+    .card a:hover {
+      background-color: #7dd3fc;
+      transform:scale(1.03);
+    }
+
+     footer{
+      margin-top:4rem;
+      text-align:center;
+      color:#94a3b8;
+      font-size:0.95rem;
+    }
+
+    footer a{
+      color:#38bdf8;
+      text-decoration:none;
+    }
+
+    footer a:hover{
+      text-decoration:underline;
+      cursor: pointer;
+    }
+
   </style>
 </head>
 
 <body>
 
+  <section class="heading">
   <h1>🚀 My Frontend Mentor Projects</h1>
-  <p>Responsive and interactive web projects</p>
+  <p>Responsive and interactive frontend projects built with HTML, CSS and JavaScript</p>
+  </section>
 
   <div class="projects">
 
     <div class="card">
-      <h2>👗 Base Apparel</h2>
-      <p>Coming soon page with email validation</p>
-      <a href="./base-apparel-fashion-shop/">Live Project</a>
+      <div>
+        <div class="card-icon">👗</div>
+        <h2>Base Apparel</h2>
+        <p>
+          Coming soon landing page with responsive layout and email validation.
+        </p>
+      </div>
+      <a href="./base-apparel-fashion-shop/">
+        View Project
+      </a>
+    </div>
+
+     <div class="card">
+      <div>
+        <div class="card-icon">📩</div>
+        <h2>Contact Form</h2>
+        <p>
+          Accessible contact form with validation states and responsive design.
+        </p>
+      </div>
+      <a href="./contact-form/">
+        View Project
+      </a>
     </div>
 
     <div class="card">
-      <h2>📩 Contact Form</h2>
-      <p>Accessible form with validation</p>
-      <a href="./contact-form/">Live Project</a>
+      <div>
+        <div class="card-icon">🌐</div>
+        <h2>Huddle Landing Page</h2>
+        <p>
+          Modern responsive landing page with clean layout and call-to-action sections.
+        </p>
+      </div>
+      <a href="./huddle-landing-page/">
+        View Project
+      </a>
     </div>
 
     <div class="card">
-      <h2>🌐 Huddle Landing Page</h2>
-      <p>Responsive landing page design</p>
-      <a href="./huddle-landing-page/">Live Project</a>
+      <div>
+        <div class="card-icon">🛍️</div>
+        <h2>Product Preview Card</h2>
+        <p>Elegant product card component with responsive layout and hover effects.</p>
+      </div>
+      <a href="./product-preview-card/">
+        View Project
+      </a>
     </div>
 
     <div class="card">
-      <h2>🛍️ Product Preview</h2>
-      <p>Clean product card UI</p>
-      <a href="./product-preview-card/">Live Project</a>
+      <div>
+        <div class="card-icon">🧮</div>
+        <h2>Tip Calculator</h2>
+        <p>
+          Interactive tip calculator with custom percentages, validation and live updates using JavaScript.
+        </p>
+      </div>
+      <a href="./tip-calaculator-main/">
+        View Project
+      </a>
     </div>
 
-  </div>
+    <div class="card">
+      <div>
+        <div class="card-icon">📝</div>
+        <h2>Intro Component with Signup Form</h2>
+        <p>
+          Responsive signup form with JavaScript validation, accessibility improvements and error handling.
+        </p>
+      </div>
+      <a href="./intro-compoment-with-signupform/">
+        View Project
+      </a>
+    </div>
+
+    </div>
+  </section>
+
+  <footer>
+    Built by <a href="#"><strong>Ogbu, Emmanuella Kosisochukwu</strong></a> using <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor challenges.</a>
+  </footer>
 
 </body>
 </html>

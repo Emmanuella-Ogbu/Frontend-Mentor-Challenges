@@ -65,6 +65,8 @@ Through these challenges, I am improving my ability to:
 * Project 2 - contact-form
 * Project 3 - huddle-landing-page
 * Project 4 - product-preview-card
+* Project 5 - tip-calculator-main
+* Project 6 - intro-compoment-with-signup-form
 * ⏳ Ongoing — continuously adding new challenges
 
 ---
