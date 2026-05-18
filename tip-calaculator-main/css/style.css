@@ -1,0 +1,278 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Color */
+    --primary-color:hsl(172, 67%, 45%); /* teal - output button */
+    --BG-color: hsl(185, 41%, 84%);
+    --white-color: hsl(0, 100%, 100%);
+    --primary-hover-color:hsl(172, 67%, 60%);
+    --error-color:hsl(0, 93%, 68%);
+    --label-color:hsl(184, 14%, 56%);
+    --grey500:hsl(186, 14%, 43%);
+    --input-color:hsl(189, 47%, 97%);
+    --result-color:hsl(183, 100%, 15%);
+
+    /* Fonts */ 
+    --Font-Family:'Space Mono', sans-serif;
+    --Font-Size: 1.5rem;
+    --Font-Weight:700;
+}
+
+/* BODY -Full Body Layout */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Ensures the background fills the whole screen even when content is short */
+    font-family: var(--Font-Family);
+    background-color: var(--BG-color);
+}
+
+/* HEADER - Contains Logo */
+header {
+    text-align: center;
+    padding: 2.5rem 0;
+}
+
+/* MAIN --- White Card */
+main{
+    background-color: var(--white-color);
+    max-width: 920px; 
+    width: 100%;
+    border-radius: 2rem;
+    padding: 2rem;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Add space between big sections: inputs and results */
+}
+
+.inputs {
+     display: flex;
+     flex-direction: column;
+     gap: 2rem; /* Add space between sections: tip and people */
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label, legend {
+    color: var(--label-color);
+    font-weight: var(--Font-Weight);
+    font-family: var(--Font-Family);
+    font-size: 1.0rem;
+}
+
+legend {
+    margin-bottom: 1rem;
+}
+
+.input-image {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--input-color);
+    padding: 1rem;
+    border-radius: 0.4rem;
+    border: 2px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.input-image:focus-within {
+    border-color: var(--primary-color);
+}
+
+input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: var(--Font-Family);
+    font-weight: 700;
+    font-size: var(--Font-Size);
+    color: var(--result-color);
+    text-align: right;
+    cursor: pointer;
+}
+
+input::placeholder {
+    color: var(--grey500);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    appearance: none;
+}  /* Used to remove the default number arrows/spinners from input ype =number in HTML */
+
+input[type="number"] {
+    appearance: textfield;
+}
+
+fieldset {
+    border: none;
+}
+
+.tip-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.dark-shade, .light-shade {
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.7rem;
+    font-family: var(--Font-Family);
+    font-size: var(--Font-Size);
+    font-weight: var(--Font-Weight);
+    transition: background-color 0.2s ease-in-out ;
+}
+
+.dark-shade {
+    background-color: var(--result-color);
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+.dark-shade:hover {
+    background-color: var(--primary-hover-color);
+    color: var(--result-color); 
+}
+
+.dark-shade.active {
+    background-color: var(--primary-color);
+    color: var(--result-color); 
+}
+
+.light-shade {
+    background-color: var(--input-color);
+    color: var(--grey500);
+    border: 2px solid transparent;
+}
+
+.light-shade:hover,
+.light-shade:focus {
+    border-color: var(--primary-color);
+    cursor: pointer;
+}
+
+input.light-shade {
+  cursor: text;
+  text-align: center;
+}
+
+.error-message {
+    display: none;
+    color:  hsl(0, 93%, 68%);
+    font-weight: 300;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    margin-left: 2rem;
+}
+
+.input-image.error {
+  border-color: var(--error-color);
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* So that the reset button stays at the bottom */
+    background-color: var(--result-color);
+    border-radius: 1rem;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: var(--Font-Weight);
+}
+
+ .result-row label {
+    color: var(--white-color);
+    font-size: 1rem;
+}
+
+.result-row span {
+    color: hsl(183, 79%, 65%);
+    display: block;
+    font-weight: 500;
+} 
+
+output {
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: var(--Font-Weight);
+}
+
+.reset {
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--result-color);
+    padding: 1.2rem;
+    border-radius: 0.5rem;
+    font-weight: var(--Font-Weight);
+    font-size: var(--Font-Size);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.reset:hover {
+    background-color: var(--primary-hover-color);
+}
+
+.attribution {
+    text-align: center;
+    font-size: 1rem;
+    padding: 2rem 1rem;
+    color: var(--result-color);
+}
+
+.attribution a {
+    color:  var(--primary-color);
+    text-decoration: none;
+}
+
+.attribution a:hover {
+    text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+   .calculator {
+      flex-direction: row;
+   }
+
+   .inputs, .results {
+    flex: 1; /* For equal width btw inputs and result class */
+   }
+
+   .tip-buttons {
+      grid-template-columns: repeat(3, 1fr);
+   }
+
+   output {
+        font-size: 3rem;
+    }
+}

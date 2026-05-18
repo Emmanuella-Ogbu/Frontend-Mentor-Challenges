@@ -1,0 +1,277 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --BG-color:hsl(0, 100%, 74%);
+    --font-weight: 700;
+    --header-color:white;
+    --first-btn: hsl(248, 32%, 49%);
+    --second-btn: hsl(154, 59%, 51%);
+    --font-color: hsl(246, 25%, 77%);
+    --font-size: 1rem;
+    --input-color: hsl(249, 10%, 26%);
+    --font-family:'Poppins', sans-serif;
+}
+
+body {
+    background-image: url(../images/bg-intro-mobile.png);
+    background-color: var(--BG-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:1.5rem 2rem;
+    min-height: 100vh;
+    font-family: var(--font-family);
+}
+
+.whole {
+    width: 100%;
+    max-width: 1110px;
+    gap: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-side {
+    text-align: center;
+    color: var(--header-color);
+    margin: 2em;
+}
+
+.left-side h1 {
+    font-weight: var(--font-weight);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    line-height: 3rem;
+}
+
+.left-side p {
+    font-weight: 400;
+    color: rgb(244, 239, 239);
+    line-height: 2.25rem;
+    font-size: 1.5rem;
+}
+
+.first-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.trial {
+    background-color: var(--first-btn);
+    border: none;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    border-radius: 0.75rem;
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 8px rgba(0,0,0,0.15);
+}
+
+.free {
+    color: white;
+    font-weight: var(--font-weight);
+    font-size: 1.5rem;
+}
+
+form{
+    background-color: white;
+    border: none;
+    border-radius: 0.75rem;
+    padding: 1.8rem 2.0rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 8px rgba(0,0,0,0.15);
+}
+
+input {
+    color: var(--input-color);
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 0.4em;
+    border: 1px solid var(--font-color);
+    width: 100%;
+    padding: 1.5rem;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-group {
+    margin-bottom: 1.25rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: hsl(248, 32%, 49%);
+}
+
+input.error {
+    border-color: red; /* or your error color variable */
+}
+
+.error-icon {
+    display: none;
+    position: absolute;
+    right: 1rem;
+    transform: translateY(-50%);
+    top: 50%;
+}
+
+.error-message {
+    display: none;
+    color: var(--BG-color);
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-style: italic;
+    text-align: right;
+    margin-top: 0.5rem;
+}
+
+.input-group.show-error .error-icon {
+    display:block;
+}
+
+.input-group.show-error .error-message {
+    display:block;
+}
+
+.input-group.show-error input {
+    border-color: var(--BG-color);
+}
+
+.sr-only {
+    position: absolute;
+    /*
+      Removes the label from normal document flow.
+      Without this, the label would take up visible space.
+    */
+
+    width: 1px;
+    height: 1px;
+    /*
+      Shrinks the element to 1×1 pixel — essentially invisible.
+      Cannot be 0×0 because some screen readers skip zero-size elements.
+    */
+
+    padding: 0;
+    margin: -1px;
+    /*
+      Removes all spacing and the tiny 1px height is cancelled out.
+    */
+
+    overflow: hidden;
+    /*
+      If any text somehow extends beyond 1px, clip it.
+    */
+
+    clip: rect(0, 0, 0, 0);
+    /*
+      An old CSS property that crops the visible area to a rectangle.
+      rect(0,0,0,0) means: visible area is zero in all directions.
+    */
+
+    white-space: nowrap;
+    /*
+      Prevents text wrapping which could make the element taller.
+    */
+
+    border: 0;
+    /*
+      Removes any border that might make the element visible.
+    */
+}
+
+.second-btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.submit {
+   background-color: var(--second-btn);
+    border: none;
+    padding: 1.25rem;
+    width: 100%;
+    border-radius: 0.4rem;
+    color: white;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.submit:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.second-para {
+    color: var(--font-color);
+    text-align: center;
+}
+
+.effect {
+    color: var(--BG-color);
+    font-weight: var(--font-weight);
+    font-size: var(--font-size);
+    letter-spacing:-1px;
+}
+
+.attribution {
+ margin-top: 1rem;                    /* Good space between form and footer */
+    text-align: center;
+    color: var(--first-btn);      /* Darker color for names*/       
+    line-height: 1.6;
+    font-size: 0.8rem;
+}
+
+.attribution a {
+    color: hsl(0, 14%, 36%);              
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.attribution a:hover {
+    color: var(--font-color);             /* Green hover - matches the form buttons */
+    text-decoration: underline;
+}
+ 
+@media (min-width:768px) {
+
+    body {
+        background-image: url(../images/bg-intro-desktop.png);
+    }
+    .whole {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+    }
+    .left-side,
+    .right-side {
+        flex: 1 ;
+       /*  text-align: center; */
+    }
+
+    .left-side {
+        text-align: left;
+    }
+
+    .left-side h1 {
+        font-size: 3rem;
+        line-height: 3.5rem;
+    }
+}

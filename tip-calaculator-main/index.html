@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+</head>
+<body>
+  <header>
+  <img class="logo-image" src="./images/logo.svg" alt="Splitter Logo">
+  </header>
+
+  <main>
+    <form id="tip-form" novalidate> <!-- Form was handled by JavaScript and not submitted to a Server-->
+      <div class="calculator">
+
+        <!-- LEFT PANEL: inputs -->
+         <div class="inputs">
+
+    <!-- Bill -->
+    <div class="field">
+  <label for="total-bill">Bill</label>
+
+  <div class="input-image">
+    <img src="./images/icon-dollar.svg" alt="Dollar icon">
+
+  <input type="number" id="total-bill" class="input" name="bill" placeholder="0" min="1" required>
+  </div>
+  </div>
+
+  <!-- Tip Buttons -->
+<fieldset>
+  <legend>Select Tip %</legend>
+
+  <div class="tip-buttons">
+  <button type="button" class="dark-shade" aria-pressed="false" data-tip="5">5%</button> <!-- aria-pressed is used to help screen reader better understand UI elements and mainly for section of state (select/unselect)-->
+  <button type="button" class="dark-shade" aria-pressed="false" data-tip="10">10%</button> <!--data-tip="5" is used to store clean numbers directly as shown for JavaScript to read -->
+  <button type="button" class="dark-shade" aria-pressed="false" data-tip="15">15%</button>
+  <button type="button" class="dark-shade" aria-pressed="false" data-tip="25">25%</button>
+  <button type="button" class="dark-shade" aria-pressed="false" data-tip="50">50%</button>
+   
+
+<!-- Custom: button input shown by default, input hidden-->
+ <input type="number" id="custom-number" placeholder="Custom" class="light-shade">
+ </div>
+</fieldset>
+
+<!-- Number of People-->
+  <div class="field">
+   <label for="total-people">Number of People
+    <span class="error-message" id="people-error">Can't be zero</span>
+   </label>
+
+   <div class="input-image">
+    <img src="./images/icon-person.svg" alt="Person icon">
+  <input type="number" id="total-people" name="people" placeholder="0" min="1" required>
+  </div>
+  </div>
+  </div>
+
+  <!-- RIGHT PANEL: results -->
+  <div class="results">
+
+    <div class="result-row">
+        <label for="tip-result">
+            Tip Amount
+            <span class="per-person">/ person</span>
+        </label>
+        <output id="tip-result">$0.00</output>
+    </div>
+
+    <div class="result-row">
+        <label for="total-result">
+            Total
+            <span class="per-person">/ person</span>
+        </label>
+        <output id="total-result">$0.00</output>
+    </div>
+      
+    <button type="button" id="reset-btn" class="reset"> Reset</button>
+
+    </div>
+
+    </div>
+  </form>
+  </main>
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Ogbu, Emmanuella Kosisochukwu</a>.
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -312,7 +312,7 @@ button:focus-visible {
 }
 
 /* ====================== SMALL SCREEN TWEAKS ====================== */
-@media (max-width: 500px) {
+@media (min-width: 500px) {
   main {
     padding: 2rem 1.5rem;
   }
