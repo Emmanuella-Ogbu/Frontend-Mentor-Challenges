@@ -44,8 +44,8 @@ Users should be able to:
 
 ## Links
 
-- Live Site URL: [Add live URL]
-- Solution URL: [Add Frontend Mentor solution link]
+- Live Site URL: [https://emmanuella-ogbu.github.io/Frontend-Mentor-Challenges/tip-calaculator-main/]
+- Frontend Mentor Solution URL: [https://www.frontendmentor.io/solutions/tip-calculator-app-using-html-css-and-javascript-HtfmVENKkj]
 
 ---
 

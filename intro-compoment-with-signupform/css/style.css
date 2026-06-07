@@ -29,7 +29,7 @@ body {
 
 .whole {
     width: 100%;
-    max-width: 1110px;
+    max-width: 70rem; /* 70rem * 16px = 1.120px */
     gap: 3rem;
     display: flex;
     flex-direction: column;
@@ -117,7 +117,7 @@ input:focus {
 }
 
 input.error {
-    border-color: red; /* or your error color variable */
+    border: 3px solid var(--BG-color); /* or your error color variable */
 }
 
 .error-icon {
@@ -147,7 +147,7 @@ input.error {
 }
 
 .input-group.show-error input {
-    border-color: var(--BG-color);
+    border: 3px solid var(--BG-color);
 }
 
 .sr-only {
@@ -167,7 +167,7 @@ input.error {
     padding: 0;
     margin: -1px;
     /*
-      Removes all spacing and the tiny 1px height is cancelled out.
+      Removes all spacing and the tiny 1px height and width is cancelled out.
     */
 
     overflow: hidden;
@@ -202,7 +202,6 @@ input.error {
    background-color: var(--second-btn);
     border: none;
     padding: 1.25rem;
-    width: 100%;
     border-radius: 0.4rem;
     color: white;
     margin-bottom: 1rem;
@@ -263,7 +262,6 @@ input.error {
     .left-side,
     .right-side {
         flex: 1 ;
-       /*  text-align: center; */
     }
 
     .left-side {

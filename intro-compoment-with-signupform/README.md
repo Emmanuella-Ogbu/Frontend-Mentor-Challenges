@@ -42,8 +42,8 @@ Users should be able to:
 
 ## Links
 
-- Live Site URL: [Add your Netlify/Vercel link here]
-- Solution URL: [Add Frontend Mentor solution link here]
+- Live Site URL: [(https://emmanuella-ogbu.github.io/Frontend-Mentor-Challenges/intro-compoment-with-signupform/)]
+- Solution URL: [https://www.frontendmentor.io/solutions/intro-component-with-sign-up-form-CZXe_aEd0m]
 
 ---
 
@@ -188,7 +188,7 @@ I want to continue improving in:
 ## Author
 
 - Frontend Mentor - [@Emmanuella-Ogbu](https://www.frontendmentor.io/profile/Emmanuella-Ogbu)
-
+- GitHub - https://github.com/Emmanuella-Ogbu
 ---
 
 ## Acknowledgments

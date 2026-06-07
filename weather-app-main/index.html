@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700&family=DM+Sans:ital,wght@0,300;0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./newstyle.css">
+
+    <title>Frontend Mentor | Weather App</title>
+</head>
+<body>
+
+    <!--Heading-->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">
+                <img src="./assets/images/logo.svg" alt="Weather Now Logo">
+            </a>
+
+        <div class="units-wrapper">
+            <button class="units-btn" id="unitsBtn">
+                <img src="./assets/images/icon-units.svg" alt="units icon">
+                <span>Units</span>
+                <img src="./assets/images/icon-dropdown.svg" alt="dropdown icon" class="dropdown-icon">
+            </button>
+
+            <!-- Dropdown menu for units -->
+             <div class="units-dropdown" id="unitsDropdown">
+                <button class="units-switch-btn" id="unitsSwitchBtn">Switch to Imperial</button>
+
+                <div class="unit-group">
+                    <p class="unit-group-label">Temperature</p>
+                    <div class="unit-option selected" data-group="temp" data-val="C">Celsius (°C)
+                        <img src="./assets/images/icon-checkmark.svg" alt="checkmark icon" class="unit-check">
+                    </div>
+                    <div class="unit-option" data-group="temp" data-val="F">Fahrenheit (°F)
+                        <img src="./assets/images/icon-checkmark.svg" alt="checkmark icon" class="unit-check">
+                    </div>
+                </div>
+
+                <div class="unit-group">
+                    <p class="unit-group-label">Wind Speed</p>
+                    <div class="unit-option selected" data-group="wind" data-val="kmh">km/h
+                        <img src="./assets/images/icon-checkmark.svg" alt="checkmark icon" class="unit-check">
+                        </div> 
+                    <div class="unit-option" data-group="wind" data-val="mph">mph
+                        <img src="./assets/images/icon-checkmark.svg" alt="checkmark icon" class="unit-check">
+                    </div>
+                </div>
+
+                <div class="unit-group">
+                    <p class="unit-group-label">Precipitation</p>
+                    <div class="unit-option selected" data-group="precip" data-val="mm">Millimeters (mm)
+                        <img src="./assets/images/icon-checkmark.svg" alt="checkmark icon" class="unit-check">
+                    </div>
+                    <div class="unit-option" data-group="precip" data-val="in">Inches (in)
+                        <img src="./assets/images/icon-checkmark.svg" alt="checkmark icon" class="unit-check">
+                    </div>
+                </div>
+
+             </div>
+        </div>
+    </nav>
+</header>
+    
+
+<!--MAIN CONTENT-->
+<main class="main">
+
+    <h1 class="tagline">How's the sky looking today?</h1>
+
+    <!--SEARCH BAR -->
+    <div class="search-wrapper">
+        <div class="search-row">
+
+            <div class="search-input-wrap" id="searchInputWrap">
+                <img src="./assets/images/icon-search.svg" alt="search icon" class="search-icon">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search for a place..." autocomplete="off">
+            </div>
+
+            <button class="search-btn" id="searchBtn">Search</button>
+        </div>
+
+        <!--Autocomplete dropdown - JS fills this with city suggestions-->
+        <div class="autocomplete" id="autocomplete"></div>
+
+    </div>
+
+    <!-- NO RESULTS MESSAGE - hidden by CSS, shown by JS-->
+     <p class="no-results" id="noResults">No search result found!</p>
+
+     <!-- ERROR STATE - hidden by CSS, shown by JS-->
+      <div class="error-state" id="errorState">
+        <img src="./assets/images/icon-error.svg" alt="error icon" class="error-icon">
+        <h2 class="error-title">Something went wrong</h2>
+        <p class="error-msg">We couldn't connect to the server. Please try again in a few moments.</p>
+        <button class="retry-btn" id="retryBtn">
+            <img src="./assets/images/icon-retry.svg" alt="retry icon"> 
+            Retry
+        </button>
+      </div>
+
+      <!--WEATHER CONTENT - hidden by CSS, shown by JS when data loads-->
+      <div class="weather-grid" id="weatherContent">
+
+        <!--LEFT COLUMN -->
+        <div class="weather-left">
+
+            <!-- CURRENT WEATHER CARD -->
+             <div class="current-card" id="currentCard">
+
+                <!--Background Image - switches between mobile and desktop versions -->
+                <picture class="current-bg">
+                    <source media="(min-width: 768px)" srcset="./assets/images/bg-today-large.svg">
+                    <img src="./assets/images/bg-today-small.svg" alt="weather small background image">
+                </picture>
+
+                <!-- Loading State - shown while data fetches -->
+                 <div class="loading-overlay" id="loadingverlay">
+                    <img src="./assets/images/icon-loading.svg" alt="loading icon" class="loading-spinner">
+                    <p>Loading...</p>
+                 </div>
+
+                 <!-- Actual Weather info sits on top of the background -->
+                 <div class="current-content">
+                    <div class="current-info">
+                        <p class="current-city">-</p>
+                        <p class="current-date" id="currentDate">-</p>
+                    </div>
+                    <div class="current-right">
+                        <img src="./assets/images/icon-sunny.webp" alt="sunny icon" class="current-weather-icon" id="currentIcon">
+                        <p class="current-temp" id="currentTemp">-</p>
+                    </div>
+                 </div>
+
+             </div>
+             <!-- end current card -->
+
+             <!-- STATS ROW -->
+              <div class="stats-grid">
+                <div class="stat-card">
+                    <p class="stat-label">Feels Like</p>
+                    <p class="stat-value" id="feelsLike">-</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Humidity</p>
+                    <p class="stat-value" id="humidity">-</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Wind</p>
+                    <p class="stat-value" id="windSpeed">-</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Percipitation</p>
+                    <p class="stat-value" id="precipitation">-</p>
+                </div>
+              </div>
+
+              <!--DAILY FORECAST-->
+              <div class="daily-section">
+                <h2 class="section-title">Daily forecast</h2>
+                <!--JavaScript fills this with 7 day cards -->
+                <div class="daily-grid" id="dailyGrid"></div>
+              </div>
+
+        </div>
+        <!-- end left column-->
+
+        <!-- RIGHT COLUMN - HOURLY PANEL -->
+         <div class="hourly-panel">
+
+            <div class="hourly-header">
+                <h2 class="hourly-title">Hourly forecast</h2>
+
+                <!-- Day picker - click to change which day's hours you see-->
+                 <div class="day-picker-wrapper">
+                    <button class="day-picker-btn" id="dayPickerBtn">
+                        <span id="selectedDayLabel">-</span>
+                        <img src="./assets/images/icon-dropdown.svg" alt="dropdown icon">
+                    </button>
+                    <!-- JS fills this dropdown wth the 7 day names -->
+                     <div class="day-dropdown" id="dayDropdown"></div>
+                 </div>
+
+            </div>
+            <!-- JS fills this list with hourly forcast items -->
+             <ul class="hourly-list" id="hourlyList"></ul>
+
+         </div>
+         <!-- end hourly panel-->
+
+      </div>
+      <!-- end weather grid -->
+
+</main>
+
+<!-- FOOTER -->
+<footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/Emmanuella-Ogbu">Emmanuella Ogbu</a>.
+</footer>
+
+<!-- JS loads last so all HTML above already exists when it runs -->
+ <script src="script.js"></script>
+</body>
+</html>

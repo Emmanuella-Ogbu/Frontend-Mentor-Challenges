@@ -1,0 +1,299 @@
+/* ===============================
+VARIABLES
+==================================
+Store all your colours and sizes in one place. Change one variable and it updates everywhere. */
+:root {
+    --n900: hsl(243, 96%, 9%);
+    --n800: hsl(243, 27%, 20%);
+    --n700: hsl(243, 23%, 24%);
+    --n600: hsl(243, 23%, 30%);
+    --n300: hsl(240, 6%, 70%);
+    --n200: hsl(240, 6%, 84%);
+    --n0: hsl(0, 0%, 100%);
+
+    --orange: hsl(28, 100%, 52%);
+    --blue: hsl(233, 67%, 56%);
+    --blue-dark: hsl(248, 70%, 36%);
+}
+
+/*================================
+RESET: Browsers add their own margins, padding and box sizing by default. We wipe all of that and start clean with our own styles. */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    color: var(--n0);
+    background-color: var(--n900);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+    border: none;
+    background: none;
+    color: inherit;
+}
+
+/* ==========================
+NAVBAR 
+================================= */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 2rem;
+}
+
+.logo img {
+    height: 2.5rem;
+}
+
+/* Units button */
+.units-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 0.9rem;
+    background: var(--n700);
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background 0.15s;
+}
+
+.units-btn:hover {
+    background: var(--n600);
+}
+
+.dropdown-icon {
+    width: 0.8rem;
+    transition: transform 0.2s;
+}
+
+/* Rotates the arror when the dropdown is open */
+units-btn.open .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+/* Units dropdown label */
+.units-wrapper {
+    position: relative;
+}
+
+.units-dropdown {
+    position: absolute;
+    display: none;
+    top:calc(100% + 0.4rem);
+    right: 0;
+    min-width: 220px;
+    background: var(--n800);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    z-index: 100;
+    box-sizing: 0 8px 32px rgba(0,0,0,0.45);
+}
+
+.units-dropdown.open {
+    display: block;
+}
+
+.units-switch-btn {
+    display: block;
+    width: 100%; /* Makes button strtch dopdown width */
+    text-align: left;
+    padding: 0.85rem 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    background: var(--n700);
+    transition: background 0.15s;
+}
+
+.units-switch-btn:hover {
+    background: var(--n600);
+}
+
+.unit-group {
+    padding: 0.3rem 0;
+}
+
+.unit-group-label {
+    font-size: 0.75rem;
+    color: var(--n300);
+    padding: 0.5rem 1rem 0.2rem;
+}
+
+.unit-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.unit-option:hover {
+    background: var(--n700);
+}
+
+.unit-check {
+    width: 1rem;
+    opacity: 0;
+}
+
+/* Only show checkmark on selected option */
+.unit-option.selected .unit-check {
+    opacity: 1;
+}
+
+/* ================================
+        MAIN LAYOUT 
+==================================*/
+.main {
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the .main (main content) container horizontally */
+    padding: 0 2rem 3rem;
+}
+
+.tagline {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.75rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* =================================
+       SEARCH BAR
+===================================*/
+.search-wrapper {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+.search-row {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.search-input-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0 1rem;
+    background: var(--n800);
+    border-radius: 0.5rem;
+    border: 2px solid transparent;
+    transition: border-color 0.15s;
+}
+
+.search-input-wrap:focus-within {
+    border-color: var(--blue);
+}
+
+.icon-search {
+    width: 1.1rem;
+    flex-shrink: 0;
+}
+
+.search-input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--n0);
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.9rem 0;
+}
+
+.search-input::placeholder {
+    color: var(--n300);
+}
+
+.search-btn {
+    padding: 0.9rem 1.5rem;
+    background: var(--blue);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--n0);
+    transition: background 0.15s;
+}
+
+.search-btn:hover {
+    background: var(--blue-dark);
+}
+
+/* Autocomplete dropdown */
+.autocomplete {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.25rem);
+    left: 0;
+    right: 0;
+    background: var(--n800);
+    border-radius: 0.5rem;
+    z-index: 50;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.autocomplete.visible {
+    display: block;
+}
+
+.autocomplete-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1rem;
+    font-size: 0.95rem;
+    color: var(--n200);
+    cursor: pointer;
+    transition: background 0.12s;
+}
+
+.search-in-progress {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1rem;
+    font-size: 0.9rem;
+    color: var(--n300);
+}
+
+/* Spinning loadinf ring inside autocomplete */
+.spinner-ring {
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid var(--n600);
+    border-top-color: var(--n300);
+    border-radius: 50%;
+    animation: spin 0l8s linear infinte;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate()
+    }
+}

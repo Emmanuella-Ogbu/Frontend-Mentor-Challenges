@@ -67,4 +67,3 @@ function validateEmail(input) {
         alert('Form submitted successfully!')
       }
   })
-
